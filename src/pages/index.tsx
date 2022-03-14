@@ -14,7 +14,7 @@ interface HomeProps {
   };
 }
 
-export function Home({ product }: HomeProps) {
+export default function Home({ product }: HomeProps) {
   // Client Side: Não precisa de indexação
   // Server side: Pecisa de indexação, informações dinamicas
   // Static Site Generation: Precisa de indexação, igual para todo mundo
