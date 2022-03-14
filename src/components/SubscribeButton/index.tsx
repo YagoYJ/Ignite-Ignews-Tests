@@ -4,19 +4,17 @@ import api from "../../services/api";
 import styles from "./styles.module.scss";
 import { useRouter } from "next/router";
 
-interface SubscribeButtonProps {
-  priceId: string;
-}
-
 interface StripeSessionResponseProps {
   data: {
     sessionId: string;
   };
 }
 
-export default function SubscribeButton({ priceId }: SubscribeButtonProps) {
+export default function SubscribeButton() {
   const [session] = useSession();
+
   const router = useRouter();
+
   async function handleSubscribe() {
     if (!session) {
       signIn("github");

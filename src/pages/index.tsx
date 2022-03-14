@@ -10,11 +10,11 @@ import styles from "./home.module.scss";
 interface HomeProps {
   product: {
     priceId: string;
-    amount: number;
+    amount: string;
   };
 }
 
-export default function Home({ product }: HomeProps) {
+export function Home({ product }: HomeProps) {
   // Client Side: Não precisa de indexação
   // Server side: Pecisa de indexação, informações dinamicas
   // Static Site Generation: Precisa de indexação, igual para todo mundo
@@ -37,7 +37,7 @@ export default function Home({ product }: HomeProps) {
             <span>for {product.amount} month</span>
           </p>
 
-          <SubscribeButton priceId={product.priceId} />
+          <SubscribeButton />
         </section>
         <img src="/images/avatar.svg" alt="Girl Coding" />
       </main>
